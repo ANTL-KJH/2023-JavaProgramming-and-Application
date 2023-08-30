@@ -1,6 +1,19 @@
+/*
+ * Project Name : JavaProgramming and Application HW01.1
+ * Program's purpose and basic function :
+ * - Sort and print the input int array
+ * Program First Author : JH KIM
+ * Date of First Write : 2023.08.29
+ * =======================================================================================================
+ * Source Code Modification History
+ * =======================================================================================================
+ * Author				Date				Ver				Modification details
+ * JH KIM				2023.08.29			v1.00			First Write
+ */
 import java.util.Scanner;
 
 public class intArray_Ex {
+
     public static int[] get_int_array(Scanner cin, int size) {
         int[] arr = new int[size];
         int num = 0;
@@ -12,7 +25,12 @@ public class intArray_Ex {
     }
 
     public static void print_array(int[] array, int size) {
-        for (int i=0;)
+
+        for (int i=0;i<size;i++)
+        {
+             System.out.print(array[i]+" ");
+        }
+        System.out.print("\n");
     }
 
     public static void insertion_sort(int[] array, int size) {
