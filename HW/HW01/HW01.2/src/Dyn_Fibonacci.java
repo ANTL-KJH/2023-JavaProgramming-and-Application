@@ -18,7 +18,7 @@ public class Dyn_Fibonacci {
     static boolean fb_n_tbl_initialized = false;
     public static double Dyn_Fibonacci(int n)
     {
-        if (fb_n_tbl_initialized == false) {
+        if (!fb_n_tbl_initialized) {
             for (int i=0; i<max_n; i++)
                 fb_n_tbl[i] = 0;
             fb_n_tbl_initialized = true;
