@@ -38,7 +38,7 @@ public class intArray_Ex {
         for (i = 1; i <= (size-1); i++)
         {
             temp = array[i];
-            for (j = i; j > 0 && array[j - 1] >= temp; --j)
+            for (j = i; j > 0 && array[j - 1] >= temp; j--)
             {
                 array[j] = array[j-1]; // shift right to make a room
             }
@@ -46,8 +46,8 @@ public class intArray_Ex {
         }
     }
 
-    public static void main(String args[]) {
-        Scanner cin = new Scanner(System.in);   // Scanner 객체 생성
+    public static void main(String[] args) {
+        Scanner cin = new Scanner(System.in);   // gen Scanner object
         System.out.print("Please input number of integers to process : ");
         int num_data = cin.nextInt();           // get size
         int[] int_array;
