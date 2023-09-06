@@ -1,4 +1,4 @@
-/*
+/**
  * Project Name : JavaProgramming and Application HW03.1
  * Program's purpose and basic function :
  * - Implementation of a Stack Structure Using Integer Array
@@ -9,6 +9,7 @@
  * =======================================================================================================
  * Author				Date				Ver				Modification details
  * JH KIM				2023.09.03			v1.00			First Write
+ * JH KIM               2023.09.06          v1.01           Func push return type changed(int->void)
  */
 package HW03_1_IntStack;
 
@@ -26,11 +27,10 @@ public class IntStack {
         this.stack_top = -1;
     }
 
-    public int push(int entry)
+    public void push(int entry)
     {
         this.stack_top++;
         this.int_array[stack_top] = entry;
-        return 0;
     }
 
     public int pop()
