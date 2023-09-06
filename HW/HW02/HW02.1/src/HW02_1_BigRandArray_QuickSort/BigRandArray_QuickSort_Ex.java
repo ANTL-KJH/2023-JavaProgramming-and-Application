@@ -1,4 +1,4 @@
-/*
+/**
  * Project Name : JavaProgramming and Application HW02.1
  * Program's purpose and basic function :
  * - BigRandArray
@@ -21,7 +21,7 @@ public class BigRandArray_QuickSort_Ex {
         int j, temp;
         for(int i=0; i<size; i++)
             bigIntArray[i] = i + offset;
-        /* shuffle */
+
         for(int i=0; i<size; i++) {
             j = (int) (Math.random() * size);   // Math.random()은 0.0~1.0 사이의 소수를 랜덤하게 생성, 생성 후 int형으로 변환
             if (j == i)
@@ -127,7 +127,7 @@ public class BigRandArray_QuickSort_Ex {
         int[] bigRandIntArray;
         while (true) {
             System.out.print("input big_size (> 32767) to generate non-duplicated random big integer array (0 to terminate) : ");
-            big_size = cin.nextInt();
+            big_size = cin.nextInt();   // get bigRandArray size
             if (big_size == 0)
                 break;
             bigRandIntArray = genBigRandIntArray(big_size, offset); // genBigRandArray

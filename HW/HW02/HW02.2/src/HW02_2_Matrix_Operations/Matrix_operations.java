@@ -19,7 +19,7 @@ public class Matrix_operations {
         System.out.printf("%s =\n", mtrx_name);
         for (int r=0; r<n_row; r++) {
             for (int c=0; c<n_col; c++) {
-                System.out.printf("%5.1f ", mtrx_data[r][c]);
+                System.out.printf("%5.1f ", mtrx_data[r][c]);   // print on console
             }
             System.out.println();
         }
@@ -82,8 +82,6 @@ public class Matrix_operations {
 
         mSubAB = subMtrx (nA_row, nA_col, mA, mB);  // matrix A-B
         printMtrx ("mSubAB", nA_row, nA_col, mSubAB);
-
-
 
         printMtrx ("mA", nA_row, nA_col, mA);
         printMtrx ("mC", nC_row, nC_col, mC);
