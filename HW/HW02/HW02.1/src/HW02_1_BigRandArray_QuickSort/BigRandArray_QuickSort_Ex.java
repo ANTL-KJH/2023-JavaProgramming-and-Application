@@ -9,6 +9,7 @@
  * =======================================================================================================
  * Author				Date				Ver				Modification details
  * JH KIM				2023.08.31			v1.00			First Write
+ * JH KIM               2023.09.14          v1.01           parameter size removed
  */
 package HW02_1_BigRandArray_QuickSort;
 
@@ -32,8 +33,9 @@ public class BigRandArray_QuickSort_Ex {
         }
         return bigIntArray;
     }
-    public static void printBigArraySample(int[] bigArray,int size,int per_line,int sample_lines)   // printBigArraySample
+    public static void printBigArraySample(int[] bigArray,int per_line,int sample_lines)   // printBigArraySample
     {
+        int size = bigArray.length;
         int count = 0;
         for (int i=0; i<sample_lines; i++)
         {
@@ -68,8 +70,9 @@ public class BigRandArray_QuickSort_Ex {
         }
         System.out.print("\n");
     }
-    public static int _partition(int[] array, int size, int left,int right,int pivotIndex)
+    public static int _partition(int[] array, int left,int right,int pivotIndex)
     {
+        int size = array.length;
         int pivotValue;
         int newPI;
         int temp, i;
@@ -98,27 +101,29 @@ public class BigRandArray_QuickSort_Ex {
         array[right] = temp;
         return newPI;
     }
-    public static void _quickSort(int[] array, int size, int left, int right)
+    public static void _quickSort(int[] array, int left, int right)
     {
+        int size = array.length;
         int pI, newPI; // pivot index
         if (left >= right)
         {
             return;
         }
         pI = (left + right) / 2;    // pivot Index
-        newPI = _partition(array, size, left, right, pI);
+        newPI = _partition(array, left, right, pI);
         if (left < (newPI - 1))     // partition left side
         {
-            _quickSort(array, size, left, newPI - 1);
+            _quickSort(array, left, newPI - 1);
         }
         if ((newPI + 1) < right)    // partition right side
         {
-        _quickSort(array, size, newPI + 1, right);
+            _quickSort(array, newPI + 1, right);
         }
     }
-    public static void quickSort(int[] array, int size)
+    public static void quickSort(int[] array)
     {
-        _quickSort(array, size, 0, size-1);
+        int size = array.length;
+        _quickSort(array, 0, size-1);
     }
     public static void main(String[] args) {
         Scanner cin = new Scanner(System.in);
@@ -132,10 +137,10 @@ public class BigRandArray_QuickSort_Ex {
                 break;
             bigRandIntArray = genBigRandIntArray(big_size, offset); // genBigRandArray
             System.out.printf("Before sorting, size = %d, offset = %d\n", big_size, offset);
-            printBigArraySample(bigRandIntArray, big_size, 10, 2);
-            quickSort(bigRandIntArray, big_size);
+            printBigArraySample(bigRandIntArray, 10, 2);
+            quickSort(bigRandIntArray);
             System.out.printf("After sorting, size = %d, offset = %d\n", big_size, offset);
-            printBigArraySample(bigRandIntArray, big_size, 10, 2);
+            printBigArraySample(bigRandIntArray, 10, 2);
         }
     }
 }

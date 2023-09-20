@@ -9,13 +9,16 @@
  * =======================================================================================================
  * Author				Date				Ver				Modification details
  * JH KIM				2023.08.31			v1.00			First Write
+ * JH KIM               2023.09.14          v1.01           parameter size removed
  */
 package HW02_2_Matrix_Operations;
 
 public class Matrix_operations {
 
-    public static void printMtrx(String mtrx_name, int n_row, int n_col, double[][] mtrx_data)    // print matrix
+    public static void printMtrx(String mtrx_name, double[][] mtrx_data)    // print matrix
     {
+        int n_row = mtrx_data.length;
+        int n_col = mtrx_data[0].length;
         System.out.printf("%s =\n", mtrx_name);
         for (int r=0; r<n_row; r++) {
             for (int c=0; c<n_col; c++) {
@@ -25,8 +28,10 @@ public class Matrix_operations {
         }
     }
 
-    public static double[][] addMtrx(int n_row, int n_col, double[][] mA_data, double[][] mB_data)  // add matrix
+    public static double[][] addMtrx(double[][] mA_data, double[][] mB_data)  // add matrix
     {
+        int n_row = mA_data.length;
+        int n_col = mA_data[0].length;
         double[][] R = new double[n_row][n_col];
         for (int r=0; r<n_row; r++) {
             for (int c=0; c<n_col; c++) {
@@ -35,8 +40,10 @@ public class Matrix_operations {
         }
         return R;
     }
-    public static double[][] subMtrx(int n_row, int n_col, double[][] mA_data, double[][] mB_data)  // subtract matrix
+    public static double[][] subMtrx(double[][] mA_data, double[][] mB_data)  // subtract matrix
     {
+        int n_row = mA_data.length;
+        int n_col = mA_data[0].length;
         double[][] R = new double[n_row][n_col];
         for (int r=0; r<n_row; r++) {
             for (int c=0; c<n_col; c++) {
@@ -45,8 +52,11 @@ public class Matrix_operations {
         }
         return R;
     }
-    public static double[][] mulMtrx(int nA_row, int nA_col, int nB_row, int nB_col, double[][] mA_data, double[][] mB_data)    // multiply matrix
+    public static double[][] mulMtrx(double[][] mA_data, double[][] mB_data)    // multiply matrix
     {
+        int nA_row = mA_data.length;
+        int nA_col = mA_data.length;
+        int nB_col = mB_data[0].length;
         double[][] R = new double[nA_row][nB_col];
         for (int r=0; r<nA_row; r++) {
             for (int c=0; c<nB_col; c++) {
@@ -74,19 +84,19 @@ public class Matrix_operations {
         double[][] mSubAB;
 
         // print matrix A, B
-        printMtrx ("mA", nA_row, nA_col, mA);
-        printMtrx ("mB", nB_row, nB_col, mB);
+        printMtrx ("mA", mA);
+        printMtrx ("mB", mB);
 
-        mAddAB = addMtrx (nA_row, nA_col, mA, mB);  // matrix A+B
-        printMtrx ("mAddAB", nA_row, nA_col, mAddAB);
+        mAddAB = addMtrx (mA, mB);  // matrix A+B
+        printMtrx ("mAddAB", mAddAB);
 
-        mSubAB = subMtrx (nA_row, nA_col, mA, mB);  // matrix A-B
-        printMtrx ("mSubAB", nA_row, nA_col, mSubAB);
+        mSubAB = subMtrx (mA, mB);  // matrix A-B
+        printMtrx ("mSubAB", mSubAB);
 
-        printMtrx ("mA", nA_row, nA_col, mA);
-        printMtrx ("mC", nC_row, nC_col, mC);
+        printMtrx ("mA", mA);
+        printMtrx ("mC", mC);
 
-        mMulAC = mulMtrx (nA_row, nA_col, nC_row, nC_col, mA, mC);  // matrix a*C
-        printMtrx ("mMulAC", nA_row, nC_col, mMulAC);
+        mMulAC = mulMtrx (mA, mC);  // matrix a*C
+        printMtrx ("mMulAC", mMulAC);
     }
 }
