@@ -20,10 +20,10 @@ public class App_Students_FileIO {
         students.print_students();
         fout.write("\nAfter sorting by name : ");
         students.fprint_students(fout);
-        students.sort("reg_id", "increasing");
-        System.out.print("\nAfter sorting by reg_id : ");
+        students.sort("st_id", "increasing");
+        System.out.print("\nAfter sorting by st_id : ");
         students.print_students();
-        fout.write("\nAfter sorting by reg_id : ");
+        fout.write("\nAfter sorting by st_id : ");
         students.fprint_students(fout);
         students.sort("GPA", "decreasing");
         System.out.print("\nAfter sorting by GPA : ");

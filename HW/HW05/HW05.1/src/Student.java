@@ -18,29 +18,26 @@ public class Student extends Person implements Comparable<Student>{
     {
         return 1;
     }
-    public int compareTo(Student other, String key)
+
+    int compareStudent(String key_attr, Student other)
     {
-        if(Objects.equals(key, "name"))
+        if(Objects.equals(key_attr, "name"))
         {
             return this.name.compareTo(other.name);
         }
-        else if(Objects.equals(key, "reg_id"))
+        else if(Objects.equals(key_attr, "reg_id"))
         {
             return Integer.compare(this.reg_id, other.reg_id);
         }
-        else if(Objects.equals(key, "st_id"))
+        else if(Objects.equals(key_attr, "st_id"))
         {
             return Integer.compare(this.st_id, other.st_id);
         }
-        else if(Objects.equals(key, "GPA"))
+        else if(Objects.equals(key_attr, "GPA"))
         {
             return Double.compare(this.GPA, other.GPA);
         }
         return 0;
-    }
-    int compareStudent(String key_attr, Student other)
-    {
-        return this.compareTo(other, key_attr);
     }
 
 

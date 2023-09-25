@@ -1,4 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3486df77-7ac6-49d5-8323-f10fd1851e99" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.1/src/HW04_1_Vehicle_Interface/App_Vehicle_Sedan_Bus_Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.1/src/HW04_1_Vehicle_Interface/App_Vehicle_Sedan_Bus_Truck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.1/src/HW04_1_Vehicle_Interface/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.1/src/HW04_1_Vehicle_Interface/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.1/src/HW04_1_Vehicle_Interface/Sedan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.1/src/HW04_1_Vehicle_Interface/Sedan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.1/src/HW04_1_Vehicle_Interface/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.1/src/HW04_1_Vehicle_Interface/Truck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/App_Student_Teacher_Interfaces_Polymorphism.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/App_Student_Teacher_Interfaces_Polymorphism.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/PersonActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/PersonActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/StudentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/StudentActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/TeacherActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/HW04.2/src/HW04_2_Person_Interface/TeacherActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/out/production/HW04.1/HW04_1_Vehicle_Interface/App_Vehicle_Sedan_Bus_Truck.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/out/production/HW04.1/HW04_1_Vehicle_Interface/App_Vehicle_Sedan_Bus_Truck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/out/production/HW04.1/HW04_1_Vehicle_Interface/Bus.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/out/production/HW04.1/HW04_1_Vehicle_Interface/Bus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/out/production/HW04.2/HW04_2_Person_Interface/App_Student_Teacher_Interfaces_Polymorphism.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/out/production/HW04.2/HW04_2_Person_Interface/App_Student_Teacher_Interfaces_Polymorphism.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/out/production/HW04.2/HW04_2_Person_Interface/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/out/production/HW04.2/HW04_2_Person_Interface/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/out/production/HW04.2/HW04_2_Person_Interface/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/out/production/HW04.2/HW04_2_Person_Interface/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW04/out/production/HW04.2/HW04_2_Person_Interface/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW04/out/production/HW04.2/HW04_2_Person_Interface/Teacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2Vpm0gX3vEFaSX12qVvDJBj179I" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ANTL/Desktop/GitHub/2023-JavaProgramming-and-Application/HW/HW05/HW05.1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="3486df77-7ac6-49d5-8323-f10fd1851e99" name="변경" comment="" />
+      <created>1695612734979</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695612734979</updated>
+      <workItem from="1695612735970" duration="13000" />
+      <workItem from="1695612845845" duration="3326000" />
+      <workItem from="1695619679580" duration="2368000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
 </project>

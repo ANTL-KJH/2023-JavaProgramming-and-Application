@@ -41,29 +41,47 @@ public class StudentArray {
 
     public void sort(String key_attr, String sorting_order) {
 
-        for (int i = 0; i < this.num_students - 1; i++) {
-            int minIdx = i;
-            for (int j = i + 1; j < this.num_students; j++) {
-                if (Objects.equals(sorting_order, "increasing"))
-                {
-                    if (this.students[minIdx].compareStudent(key_attr, this.students[j]) > 0)
-                        minIdx = j;
-                }
+        //for (int i = 0; i < this.num_students - 1; i++) {
+        //    int minIdx = i;
+        //    for (int j = i + 1; j < this.num_students; j++) {
+        //        if (Objects.equals(sorting_order, "increasing"))
+        //        {
+        //            if (this.students[minIdx].compareStudent(key_attr, this.students[j]) > 0)
+        //                minIdx = j;
+        //        }
+//
+        //        else if(Objects.equals(sorting_order, "decreasing"))
+        //        {
+        //            if (this.students[minIdx].compareStudent(key_attr, this.students[j]) < 0)
+        //                minIdx = j;
+        //        }
+        //    }
+        //    if (minIdx != i) {
+        //        Student temp = students[i];
+        //        this.students[i] = this.students[minIdx];
+        //        this.students[minIdx] = temp;
+        //    }
+        //}
 
-                else if(Objects.equals(sorting_order, "decreasing"))
+        for(int i=1;i<=this.num_students-1;i++)
+        {
+            Student temp = this.students[i];
+            int j=i;
+            if (sorting_order == "increasing")
+            {
+                for(; j>0&&students[j-1].compareStudent(key_attr, temp)>=0; j--)
                 {
-                    if (this.students[minIdx].compareStudent(key_attr, this.students[j]) < 0)
-                        minIdx = j;
+                    this.students[j]=this.students[j-1];
                 }
-
             }
-            if (minIdx != i) {
-                Student temp = students[i];
-                this.students[i] = this.students[minIdx];
-                this.students[minIdx] = temp;
+            else {
+                for(; j>0&&students[j-1].compareStudent(key_attr, temp)<=0; j--)
+                {
+                    this.students[j]=this.students[j-1];
+                }
             }
+            this.students[j]= temp;
         }
-
 
     }
 
