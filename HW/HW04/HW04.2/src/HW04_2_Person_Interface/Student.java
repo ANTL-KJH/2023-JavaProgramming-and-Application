@@ -3,11 +3,14 @@ package HW04_2_Person_Interface;
 public class Student extends Person implements StudentActivity {
     private int st_id; // data member, student_id
     private double gpa; // data member, grade point average
-
-    public Student(String nm, int reg_id, int sid, double s_gpa) {
+    private String school;
+    private String major;
+    public Student(String nm, int reg_id, String school, String major, int st_id, double st_gpa) {
         super(nm, reg_id);
-        this.st_id = sid;
-        this.gpa = s_gpa;
+        this.school = school;
+        this.major = major;
+        this.st_id = st_id;
+        this.gpa = st_gpa;
     }
 
     public int getStID() {
@@ -17,11 +20,12 @@ public class Student extends Person implements StudentActivity {
     public double getGPA() {
         return this.gpa;
     }
-
+    public String getSchool() { return this.school; }
     public String toString() {
-        String str = "Student(%s, %d, %d)".formatted(this.getName(), this.getAge(), this.getStID());
+        String str = "Student(%s, %d, %d, %s)".formatted(this.getName(), this.getReg_id(), this.getStID(), this.getSchool());
         return str;
     }
+
 
     @Override
     public void listen() {

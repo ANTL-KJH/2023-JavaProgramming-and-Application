@@ -13,8 +13,8 @@ public class Teacher extends Person implements TeacherActivity {
     }
 
     public String toString() {
-        String str = "Teacher(%s, %d, %s, %s)".formatted(this.getName(), this.getAge(), this.school, this.getMajor());
-        return str;
+
+        return "Teacher(%s, %d, %s, %s)".formatted(this.getName(), this.getReg_id(), this.school, this.getMajor());
     }
 
     public String getMajor() {

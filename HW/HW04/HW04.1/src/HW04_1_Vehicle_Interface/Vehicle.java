@@ -26,7 +26,7 @@ public abstract class Vehicle implements I_Drive {
     }
 
     public String toString() {
-        String str = "%s %s(driver : %s)".formatted(this.v_color, this.v_type, this.driver.getName());
+        String str = "(driver : %s)".formatted(this.driver.getName());
         return str;
     }
 
@@ -43,6 +43,6 @@ public abstract class Vehicle implements I_Drive {
     }
 
     public String getDriver() {
-        return driver.toString();
+        return driver.getName();
     }
 }

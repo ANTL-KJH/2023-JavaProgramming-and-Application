@@ -9,6 +9,7 @@
  * =======================================================================================================
  * Author				Date				Ver				Modification details
  * JH KIM				2023.09.18			v1.00			First Write
+ * JH KIM               2023.09.22          v1.01           toString modified
  */
 package HW04_1_Vehicle_Interface;
 
@@ -28,7 +29,7 @@ public class Person {
     }
     public String toString()
     {
-        return this.name;
+        return "Person(name: %s, reg_id: %d)".formatted(this.name, this.reg_ID);
     }
     public String getName()
     {

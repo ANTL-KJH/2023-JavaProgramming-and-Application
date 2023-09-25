@@ -10,7 +10,7 @@ public abstract class Person implements PersonActivity{
     public String getName() {
         return this.name;
     }
-    public int getAge() {
+    public int getReg_id() {
         return this.reg_id;
     }
 }
