@@ -24,7 +24,7 @@ public class Sedan extends Vehicle {
         String str = "%s Sedan(driver : %s)".formatted(this.getColor(), this.getDriver());
         return str;
     }
-
+    // Interface overriding
     @Override
     public void forward(int speed) {
         System.out.printf("moving forward at speed %d Km/h; ", speed);

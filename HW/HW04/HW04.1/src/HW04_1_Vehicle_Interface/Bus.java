@@ -23,8 +23,7 @@ public class Bus extends Vehicle {
     }
 
     public String toString() {
-        String str = "%s bus(driver : %s)".formatted(this.getColor(), this.getDriver());
-        return str;
+        return "%s bus(driver : %s)".formatted(this.getColor(), this.getDriver());
     }
     // Interface overriding
     @Override

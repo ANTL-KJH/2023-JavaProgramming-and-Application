@@ -1,3 +1,15 @@
+/**
+ * Project Name : JavaProgramming and Application HW04.2
+ * Program's purpose and basic function :
+ * - class Student
+ * Program First Author : JH KIM
+ * Date of First Write : 2023.09.18
+ * =======================================================================================================
+ * Source Code Modification History
+ * =======================================================================================================
+ * Author				Date				Ver				Modification details
+ * JH KIM				2023.09.18			v1.00			First Write
+ */
 package HW04_2_Person_Interface;
 
 public class Student extends Person implements StudentActivity {
@@ -12,7 +24,7 @@ public class Student extends Person implements StudentActivity {
         this.st_id = st_id;
         this.gpa = st_gpa;
     }
-
+    // accessor
     public int getStID() {
         return this.st_id;
     }
@@ -25,8 +37,7 @@ public class Student extends Person implements StudentActivity {
         String str = "Student(%s, %d, %d, %s)".formatted(this.getName(), this.getReg_id(), this.getStID(), this.getSchool());
         return str;
     }
-
-
+    // Overriding
     @Override
     public void listen() {
         System.out.printf("student (%s, %d) :: listening ... \n", this.getName(), this.getStID());

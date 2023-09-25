@@ -1,3 +1,15 @@
+/**
+ * Project Name : JavaProgramming and Application HW04.2
+ * Program's purpose and basic function :
+ * - class Teacher
+ * Program First Author : JH KIM
+ * Date of First Write : 2023.09.18
+ * =======================================================================================================
+ * Source Code Modification History
+ * =======================================================================================================
+ * Author				Date				Ver				Modification details
+ * JH KIM				2023.09.18			v1.00			First Write
+ */
 package HW04_2_Person_Interface;
 
 public class Teacher extends Person implements TeacherActivity {
@@ -16,11 +28,12 @@ public class Teacher extends Person implements TeacherActivity {
 
         return "Teacher(%s, %d, %s, %s)".formatted(this.getName(), this.getReg_id(), this.school, this.getMajor());
     }
-
+    // accessor
     public String getMajor() {
         return this.major;
     }
 
+    // Overriding
     @Override
     public void listen() {
         System.out.printf("teacher (%s, %s) :: listening ... \n", this.getName(), this.getMajor());
