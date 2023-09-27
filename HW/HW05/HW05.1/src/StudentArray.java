@@ -1,3 +1,16 @@
+/**
+ * Project Name : JavaProgramming and Application HW05.1
+ * Program's purpose and basic function :
+ * - class StudentArray
+ * Program First Author : JH KIM
+ * Date of First Write : 2023.09.22
+ * =======================================================================================================
+ * Source Code Modification History
+ * =======================================================================================================
+ * Author				Date				Ver				Modification details
+ * JH KIM				2023.09.22			v1.00			First Write
+ * JH KIM               2023.09.25          v1.10           sorting algorithm changed(selection -> insertion)
+ */
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Objects;
@@ -40,34 +53,12 @@ public class StudentArray {
     }
 
     public void sort(String key_attr, String sorting_order) {
-
-        //for (int i = 0; i < this.num_students - 1; i++) {
-        //    int minIdx = i;
-        //    for (int j = i + 1; j < this.num_students; j++) {
-        //        if (Objects.equals(sorting_order, "increasing"))
-        //        {
-        //            if (this.students[minIdx].compareStudent(key_attr, this.students[j]) > 0)
-        //                minIdx = j;
-        //        }
-//
-        //        else if(Objects.equals(sorting_order, "decreasing"))
-        //        {
-        //            if (this.students[minIdx].compareStudent(key_attr, this.students[j]) < 0)
-        //                minIdx = j;
-        //        }
-        //    }
-        //    if (minIdx != i) {
-        //        Student temp = students[i];
-        //        this.students[i] = this.students[minIdx];
-        //        this.students[minIdx] = temp;
-        //    }
-        //}
-
+        // insertion sorting
         for(int i=1;i<=this.num_students-1;i++)
         {
             Student temp = this.students[i];
             int j=i;
-            if (sorting_order == "increasing")
+            if (Objects.equals(sorting_order, "increasing"))
             {
                 for(; j>0&&students[j-1].compareStudent(key_attr, temp)>=0; j--)
                 {

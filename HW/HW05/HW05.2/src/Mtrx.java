@@ -1,3 +1,15 @@
+/**
+ * Project Name : JavaProgramming and Application HW05.2
+ * Program's purpose and basic function :
+ * - App_Mtrx_FileIO
+ * Program First Author : JH KIM
+ * Date of First Write : 2023.09.22
+ * =======================================================================================================
+ * Source Code Modification History
+ * =======================================================================================================
+ * Author				Date				Ver				Modification details
+ * JH KIM				2023.09.22			v1.00			First Write
+ */
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -24,6 +36,7 @@ public class Mtrx {
         this.n_col=n_col;
         this.m_data = m_data;
     }
+    // method
     public static Mtrx fget_Mtrx(Scanner fin)
     {
         String nm = fin.next();
@@ -57,8 +70,7 @@ public class Mtrx {
     public void fprintMtrx(FileWriter fout) throws IOException {
         String str_data;
         fout.write(String.format("%s (%d x %d) = \n", this.m_name, this.n_row, this.n_col));
-        //fout.write(String.format("%3d", this.n_row)); fout.write(" ");
-//        fout.write(String.format("%3d", this.n_col)); fout.write("\n");
+
         for (int r=0; r<this.n_row; r++)
         {
             for (int c=0; c<this.n_col; c++)
@@ -70,7 +82,7 @@ public class Mtrx {
     }
     public Mtrx addMtrx(Mtrx other)
     {
-        Mtrx m_result = new Mtrx("R", this.n_row, this.n_col);
+        Mtrx m_result = new Mtrx("", this.n_row, this.n_col);   // return instance
         for (int r=0; r<n_row; r++)
         {
             for (int c=0; c<n_col; c++)
@@ -82,7 +94,7 @@ public class Mtrx {
     }
     public Mtrx subMtrx(Mtrx other)
     {
-        Mtrx m_result = new Mtrx("R", this.n_row, this.n_col);
+        Mtrx m_result = new Mtrx("", this.n_row, this.n_col);   // return instance
         for (int r=0; r<n_row; r++)
         {
             for (int c=0; c<n_col; c++)
@@ -94,7 +106,7 @@ public class Mtrx {
     }
     public Mtrx mulMtrx(Mtrx other)
     {
-        Mtrx m_result = new Mtrx("R", this.n_row, other.n_col);
+        Mtrx m_result = new Mtrx("", this.n_row, other.n_col);  // return instance
         double temp_sum = 0.0;
         for (int r=0; r<this.n_row; r++)
         {
