@@ -11,12 +11,21 @@
  * JH KIM				2023.09.22			v1.00			First Write
  */
 public class Person{
-    String name;
-    int reg_id;
+    private String name;
+
+    private int reg_id;
 
     Person(String nm, int reg_id)   // constructor
     {
         this.name = nm;
         this.reg_id = reg_id;
+    }
+    public String getName()
+    {
+        return this.name;
+    }
+    public int getReg_id()
+    {
+        return this.reg_id;
     }
 }

@@ -28,15 +28,15 @@ public class Student extends Person {
     }
 
     public String toString() {
-        return "Student(name:%8s, reg_id:%8d, school:%8s, dept:%8s, st_id:%8d, GPA: %8.2f)".formatted(this.name, this.reg_id, this.school, this.dept, this.st_id, this.GPA);
+        return "Student(name:%8s, reg_id:%8d, school:%8s, dept:%8s, st_id:%8d, GPA: %8.2f)".formatted(this.getName(), this.getReg_id(), this.school, this.dept, this.st_id, this.GPA);
     }
 
     // compare student
     int compareStudent(String key_attr, Student other) {
         if (Objects.equals(key_attr, "name")) {
-            return this.name.compareTo(other.name);
+            return this.getName().compareTo(other.getName());
         } else if (Objects.equals(key_attr, "reg_id")) {
-            return Integer.compare(this.reg_id, other.reg_id);
+            return Integer.compare(this.getReg_id(), other.getReg_id());
         } else if (Objects.equals(key_attr, "st_id")) {
             return Integer.compare(this.st_id, other.st_id);
         } else if (Objects.equals(key_attr, "GPA")) {
