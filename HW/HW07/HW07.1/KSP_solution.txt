@@ -1,0 +1,6 @@
+Processing to obtain best solution by bruteforce() :
+Solution obtained by bruteforce() :
+  total value = 275, total weight = 20, selected items = [(Clock, 175, 10), (painting, 90, 9), (book, 10, 1)]
+Processing to obtain best solution by DynamicProgramming() :
+Solution obtained by DynamicProgramming() :
+  total value = 275, total weight = 20, selected items = [(Clock, 175, 10), (painting, 90, 9), (book, 10, 1)]
