@@ -86,7 +86,7 @@ public class Knapsack01 {
     }
     // Dynamic Programming
     public KSP_Solution DynProg_KP01() {
-        KSP_Solution[][] m = new KSP_Solution[this.items.length + 1][this.capacity + 1];
+        KSP_Solution[][] m = new KSP_Solution[this.items.length + 1][this.capacity + 1];    // 2D array allocation
         for (int i=0; i<= this.items.length; i++) {
             for (int w=0; w<= this.capacity; w++) {
                 m[i][w] = new KSP_Solution();
@@ -95,18 +95,23 @@ public class Knapsack01 {
             m[i][0].totalValue = 0;
             m[i][0].totalWeight = 0;
         }
+        // init weight, value
         for (int w=0; w<= this.capacity; w++) {
             m[0][w].totalValue = 0;
             m[0][w].totalWeight = 0;
         }
+
         for (int i=1; i<=this.items.length; i++) {
             for (int w=1; w<=this.capacity; w++) {
-                if (this.items[i-1].weight > w) {
-                    m[i][w] = m[i-1][w]; // items[i] is excluded
+                if (this.items[i-1].weight > w) // item 무게가 한도를 초과
+                {
+                    m[i][w] = m[i-1][w];
                 } else {
-                    if (m[i-1][w].totalValue > (m[i-1][w - this.items[i-1].weight].totalValue + this.items[i-1].value)) {
+                    if (m[i-1][w].totalValue > (m[i-1][w - this.items[i-1].weight].totalValue + this.items[i-1].value)) // 아이템을 넣는 경우와 아닌 경우 중 value가 높은 것을 선택
+                    {
                         m[i][w] = m[i-1][w];
                     } else {
+                        // 아이템을 선택한 경우 새로운 솔루션 구성
                         m[i][w].selectedItems.addAll(m[i-1][w].selectedItems);
                         m[i][w].selectedItems.add(this.items[i-1]);
                         m[i][w].totalValue = m[i-1][w - this.items[i-1].weight].totalValue + this.items[i-1].value;

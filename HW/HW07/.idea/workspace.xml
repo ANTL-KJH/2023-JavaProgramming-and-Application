@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f5be7956-3f44-4e2e-9925-52e8475d6e25" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/HW07.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW07.1/HW07.1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW07.2/HW07.2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ch07/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ch07/src/ch07_BinarySearchTree/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ch07/src/ch07_BinarySearchTree/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW07.1/src/Knapsack01.java" beforeDir="false" afterPath="$PROJECT_DIR$/HW07.1/src/Knapsack01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +32,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/ANTL/Desktop/GitHub/2023-JavaProgramming-and-Application/HW/HW07",
+    "last_opened_file_path": "C:/Users/KJH/Desktop/GitHub/2023-JavaProgramming-and-Application/HW/HW07",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -45,6 +50,7 @@
       <updated>1697353898216</updated>
       <workItem from="1697353899738" duration="17000" />
       <workItem from="1697361124634" duration="29000" />
+      <workItem from="1697371251983" duration="2571000" />
     </task>
     <servers />
   </component>
