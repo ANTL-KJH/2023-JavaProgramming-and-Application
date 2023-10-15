@@ -1,5 +1,7 @@
 package ch07_BinarySearchTree;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree<E> {
     private String _name;
     private BinarySearchTreeNode<E> _root;
@@ -18,9 +20,12 @@ public class BinarySearchTree<E> {
     public BinarySearchTreeNode<E> getRoot() {
         return this._root;
     }
-    private BinarySearchTreeNode<E> _insertInOrder(
-            BinarySearchTreeNode<E> subRoot_bstn,
-            BinarySearchTreeNode<E> pr_bstn, E newEntry)
+
+    public void setRoot(BinarySearchTreeNode<E> bstn)
+    {
+        this._root = bstn;
+    }
+    private BinarySearchTreeNode<E> _insertInOrder(BinarySearchTreeNode<E> subRoot_bstn, BinarySearchTreeNode<E> pr_bstn, E newEntry)
     {
         BinarySearchTreeNode<E> new_bstn, bstn = null, leftChild, rightChild;
         if (subRoot_bstn == null) {
@@ -43,8 +48,7 @@ public class BinarySearchTree<E> {
             }
             else if (subRoot_bstn.compareKey(newEntry) < 0) {
                 rightChild = subRoot_bstn.getRightChild();
-                bstn =_insertInOrder(rightChild,
-                        subRoot_bstn, newEntry);
+                bstn =_insertInOrder(rightChild, subRoot_bstn, newEntry);
                 if (bstn != null) {
                     subRoot_bstn.setRightChild(bstn);
                     bstn.setParent(subRoot_bstn);
@@ -101,4 +105,252 @@ public class BinarySearchTree<E> {
         }
         return bstn;
     }
+    public void _inOrderTraversal(BinarySearchTreeNode<E>
+                                          curBSTN, ArrayList<E> array_values) {
+        if (curBSTN.getLeftChild() != null) {
+            _inOrderTraversal(curBSTN.getLeftChild(), array_values);
+        }
+        array_values.add(curBSTN.getEntry());
+        if (curBSTN.getRightChild() != null) {
+            _inOrderTraversal(curBSTN.getRightChild(), array_values);
+        }
+    }
+    public String toString() {
+        ArrayList<E> array_values = new ArrayList<E>();
+        String str = String.format("%s : ", this._name);
+        _inOrderTraversal(this._root, array_values);
+        for (E entry : array_values) {
+            str += entry + " ";
+        }
+        return str;
+    }
+    public void _printBST_withDepth(BinarySearchTreeNode<E>
+                                            curBSTN, int level) {
+        if (curBSTN == null)
+            return;
+        if (curBSTN.getRightChild() != null) {
+            _printBST_withDepth(curBSTN.getRightChild(), level + 1);
+        }
+        String str = "";
+        for (int i=0; i<level; i++) {
+            str += " ";
+        }
+        str += curBSTN.getEntry();
+        System.out.println(str);
+        if (curBSTN.getLeftChild() != null) {
+            _printBST_withDepth(curBSTN.getLeftChild(), level + 1);
+        }
+    }
+    public void printBST_withDepth() {
+        BinarySearchTreeNode<E> bstn;
+        if (this._numEntry == 0) {
+            String str = "BinarySearchTree(%s) is Empty !!\n".formatted(this._name);
+            System.out.println(str);
+            return;
+        }
+        String str = String.format("BinarySearchTree(%s, num_entry= %d) :\n", this._name, this._numEntry);
+        System.out.println(str);
+        _printBST_withDepth(this._root, 0);
+    }
+    public int _getHeight(BinarySearchTreeNode<E> bstn) {
+        int height = 0;
+        int height_Lc, height_Rc;
+        if (bstn != null) {
+            height_Lc = _getHeight(bstn.getLeftChild());
+            height_Rc = _getHeight(bstn.getRightChild());
+            if (height_Lc > height_Rc)
+                height = 1 + height_Lc;
+            else
+                height = 1 + height_Rc;
+        }
+        return height;
+    }
+    public int _getHeightDiff(BinarySearchTreeNode<E> bstn) {
+        int heightDiff = 0;
+        if (bstn != null) {
+            heightDiff = _getHeight(bstn.getLeftChild()) -
+                    _getHeight(bstn.getRightChild());
+        }
+        return heightDiff;
+    }
+    public BinarySearchTreeNode<E> _deleteBSTN(BinarySearchTreeNode<E> toBeDeleted) {
+        BinarySearchTreeNode<E> newSubRoot = null, temp, w, wLc;
+        if (toBeDeleted == null)
+            return null;
+        if (toBeDeleted.getLeftChild() == null && toBeDeleted.getRightChild() == null) {
+            newSubRoot = null;
+        } else if (toBeDeleted.getLeftChild() != null && toBeDeleted.getRightChild() == null) {
+            newSubRoot = toBeDeleted.getLeftChild();
+            newSubRoot.setParent(toBeDeleted.getParent());
+        } else if (toBeDeleted.getLeftChild() == null && toBeDeleted.getRightChild() != null) {
+            newSubRoot = toBeDeleted.getRightChild();
+            newSubRoot.setParent(toBeDeleted.getParent());
+        } else {
+            int heightDiff = _getHeightDiff(toBeDeleted);
+            BinarySearchTreeNode<E> lChild = toBeDeleted.getLeftChild();
+            BinarySearchTreeNode<E> rChild = toBeDeleted.getRightChild();
+            BinarySearchTreeNode<E> parToBeDeleted = toBeDeleted.getParent();
+            BinarySearchTreeNode<E> ioPd = null, lcIoPd, parIoPd;
+            BinarySearchTreeNode<E> ioSs = null, rcIoSs, parIoSs;
+            if (heightDiff > 0) { // left subtree is higher, so put the in-order predecessor
+// in the place of the toBeDeleted BSTN
+                ioPd = _findMax(toBeDeleted.getLeftChild());
+                lcIoPd = ioPd.getLeftChild();
+                parIoPd = ioPd.getParent();
+                if (ioPd.getParent() != toBeDeleted) {
+                    ioPd.setLeftChild(lChild);
+                    parIoPd.setRightChild(lcIoPd);
+                    if (lcIoPd != null)
+                        lcIoPd.setParent(parIoPd);
+                }
+                ioPd.setRightChild(rChild);
+                ioPd.setParent(parToBeDeleted);
+                newSubRoot = ioPd;
+            }
+            else { // right subtree is higher, so put the in-order successor
+// in the place of the toBeDeleted BSTN
+                ioSs = _findMin(toBeDeleted.getRightChild());
+                rcIoSs = ioSs.getRightChild();
+                parIoSs = ioSs.getParent();
+                if (parIoSs != toBeDeleted) {
+                    ioSs.setRightChild(rChild);
+                    parIoSs.setLeftChild(rcIoSs);
+                    if (rcIoSs != null)
+                        rcIoSs.setParent(parIoSs);
+                }
+                ioSs.setLeftChild(lChild);
+                ioSs.setParent(parIoSs);
+                newSubRoot = ioSs;
+            } if (
+                    lChild != ioPd)
+                lChild.setParent(newSubRoot);
+            if (rChild != ioSs)
+                rChild.setParent(newSubRoot);
+        } // end if - else
+        if (toBeDeleted == this._root)
+            this._root = newSubRoot;
+        this._numEntry--;
+        return newSubRoot;
+    }
+    public BinarySearchTreeNode<E> _rotateLL(BinarySearchTreeNode<E> curSubRoot) {
+        BinarySearchTreeNode<E> newSubRoot, BRC, curParent;
+        curParent = curSubRoot.getParent();
+        newSubRoot = curSubRoot.getLeftChild();
+        BRC = newSubRoot.getRightChild();
+        curSubRoot.setLeftChild(BRC);
+        if (BRC != null)
+            BRC.setParent(curSubRoot);
+        newSubRoot.setRightChild(curSubRoot);
+        newSubRoot.setParent(curParent);
+        curSubRoot.setParent(newSubRoot);
+        return newSubRoot;
+    }
+    public BinarySearchTreeNode<E> _rotateRR(BinarySearchTreeNode<E> curSubRoot) {
+        BinarySearchTreeNode<E> newSubRoot, BLC, curParent;
+        curParent = curSubRoot.getParent();
+        newSubRoot = curSubRoot.getRightChild();
+        BLC = newSubRoot.getLeftChild();
+        curSubRoot.setRightChild(BLC);
+        if (BLC != null)
+            BLC.setParent(curSubRoot);
+        newSubRoot.setLeftChild(curSubRoot);
+        newSubRoot.setParent(curParent);
+        curSubRoot.setParent(newSubRoot);
+        return newSubRoot;
+    }
+    public BinarySearchTreeNode<E> _rotateLR(BinarySearchTreeNode<E> curSubRoot) {
+        BinarySearchTreeNode<E> subRoot, newSubRoot, A, B, C, BL, BR, curParent;
+        C = curSubRoot;
+        curParent = curSubRoot.getParent();
+        A = C.getLeftChild();
+        B = A.getRightChild();
+        BL = B.getLeftChild();
+        BR = B.getRightChild();
+        subRoot = _rotateRR(A);
+        newSubRoot = _rotateLL(C);
+        newSubRoot.setParent(curParent);
+        A.setParent(newSubRoot);
+        C.setParent(newSubRoot);
+        if (BL != null)
+            BL.setParent(A);
+        if (BR != null)
+            BR.setParent(C);
+        return newSubRoot;
+    }
+    public BinarySearchTreeNode<E> _rotateRL(BinarySearchTreeNode<E> curSubRoot) {
+        BinarySearchTreeNode<E> subRoot, newSubRoot, A, B, C, BL, BR, curParent;
+        A = curSubRoot;
+        curParent = curSubRoot.getParent();
+        C = A.getRightChild();
+        B = A.getLeftChild();
+        BL = B.getLeftChild();
+        BR = B.getRightChild();
+        subRoot = _rotateLL(C);
+        newSubRoot = _rotateRR(A);
+        newSubRoot.setParent(curParent);
+        A.setParent(newSubRoot);
+        C.setParent(newSubRoot);
+        if (BL != null)
+            BL.setParent(A);
+        if (BR != null)
+            BR.setParent(C);
+        return newSubRoot;
+    }
+    public BinarySearchTreeNode<E> _reBalance(BinarySearchTreeNode<E> curSubRoot) {
+        BinarySearchTreeNode<E> newSubRoot = null;
+        int heightDiff = 0;
+        heightDiff = _getHeightDiff(curSubRoot);
+        if (heightDiff > 1) { // left subtree is higher
+            if (_getHeightDiff(curSubRoot.getLeftChild()) > 0) {
+                newSubRoot = _rotateLL(curSubRoot);
+            } else {
+                newSubRoot = _rotateLR(curSubRoot);
+            }
+        } else if (heightDiff < -1) {
+            if (_getHeightDiff(curSubRoot.getRightChild()) < 0) {
+                newSubRoot = _rotateRR(curSubRoot);
+            } else {
+                newSubRoot = _rotateRL(curSubRoot);
+            }
+        }
+        return newSubRoot;
+    }
+    public BinarySearchTreeNode<E> _insert_withRebalancing(BinarySearchTreeNode<E> curSubRoot,
+                                                          BinarySearchTreeNode<E> curParent, E newEntry) {
+        BinarySearchTreeNode<E> newBSTN, bstn, LC, RC;
+        if (curSubRoot == null) {
+            newBSTN = new BinarySearchTreeNode<E>(newEntry);
+            curSubRoot = newBSTN;
+            if (curParent != null)
+                newBSTN.setParent(curParent);
+            newBSTN.setLeftChild(null);
+            newBSTN.setRightChild(null);
+            this._numEntry++;
+            return curSubRoot;
+        }
+        E bstn_entry = curSubRoot.getEntry();
+        if (curSubRoot.compareKey(newEntry) > 0) {
+            LC = curSubRoot.getLeftChild();
+            bstn = _insert_withRebalancing(LC, curSubRoot, newEntry);
+            if (bstn != null) {
+                curSubRoot.setLeftChild(bstn);
+                curSubRoot = _reBalance(curSubRoot);
+            }
+        } else {
+            RC = curSubRoot.getRightChild();
+            bstn = _insert_withRebalancing(RC, curSubRoot, newEntry);
+            if (bstn != null) {
+                curSubRoot.setRightChild(bstn);
+                curSubRoot = _reBalance(curSubRoot);
+            }
+        }
+        return curSubRoot;
+    }
+    public void insert_withRebalancing(E newEntry) {
+        BinarySearchTreeNode<E> newSubRoot;
+        newSubRoot = _insert_withRebalancing(this._root, null, newEntry);
+        if (newSubRoot != null)
+            this._root = newSubRoot;
+    }
 }
+
