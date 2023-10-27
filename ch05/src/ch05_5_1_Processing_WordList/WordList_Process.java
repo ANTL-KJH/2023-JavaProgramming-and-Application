@@ -1,4 +1,4 @@
-package ch05_5_1_Processing_WorldList;
+package ch05_5_1_Processing_WordList;
 
 import java.io.File;
 import java.io.FileWriter;
