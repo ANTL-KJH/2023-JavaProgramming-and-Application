@@ -1,7 +1,5 @@
 package ch06_2_1_Generic_Vector_Coordinate;
 
-
-
 class Coordinate {
     private int x,y;
     public Coordinate(int x, int y) {
