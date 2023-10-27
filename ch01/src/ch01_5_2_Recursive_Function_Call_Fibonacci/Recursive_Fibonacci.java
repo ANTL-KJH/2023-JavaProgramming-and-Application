@@ -23,7 +23,7 @@ public class Recursive_Fibonacci {
                 break;
             for (int i = 0; i <= n; i++) {
                 fibo_n = SR_Fibonacci(i);
-                System.out.printf("%3d-th Fibonacci Series = %25d\n", i, fibo_n);
+                System.out.printf("%3d-th Fibonacci Series = %25f\n", i, fibo_n);
             }
         }
     }
