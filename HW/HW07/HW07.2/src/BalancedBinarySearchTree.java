@@ -16,23 +16,29 @@ import java.io.Writer;
 import java.util.ArrayList;
 
 public class BalancedBinarySearchTree<E> {
+    // data member
     private String _name;
     private BalancedBinarySearchTreeNode<E> _root;
     private int _numEntry;
+    // constructor
     public BalancedBinarySearchTree(String bst_nm) {
         this._name = bst_nm;
         this._root = null;
         this._numEntry = 0;
     }
+    // accessor
     public int size() {
         return this._numEntry;
     }
     public boolean isEmpty() {
         return (this._numEntry == 0);
     }
+
     public BalancedBinarySearchTreeNode<E> getRoot() {
         return this._root;
     }
+
+    // mutator
 
     public void setRoot(BalancedBinarySearchTreeNode<E> bstn)
     {
@@ -43,8 +49,9 @@ public class BalancedBinarySearchTree<E> {
         BalancedBinarySearchTreeNode<E> new_bstn, bstn = null, leftChild, rightChild;
         if (subRoot_bstn == null) {
             new_bstn = new BalancedBinarySearchTreeNode<E>(newEntry);
-            if (this._numEntry == 0)
+            if (this._numEntry == 0)    // BSTN이 Null인 case
                 this._root = new_bstn; // this BSTN becomes the _root
+            // link parent and child
             new_bstn.setParent(null);
             new_bstn.setLeftChild(null);
             new_bstn.setRightChild(null);
@@ -168,8 +175,8 @@ public class BalancedBinarySearchTree<E> {
         int height = 0;
         int height_Lc, height_Rc;
         if (bstn != null) {
-            height_Lc = _getHeight(bstn.getLeftChild());
-            height_Rc = _getHeight(bstn.getRightChild());
+            height_Lc = _getHeight(bstn.getLeftChild());    // left child height check
+            height_Rc = _getHeight(bstn.getRightChild());   // right child height check
             if (height_Lc > height_Rc)
                 height = 1 + height_Lc;
             else
@@ -180,25 +187,33 @@ public class BalancedBinarySearchTree<E> {
     public int _getHeightDiff(BalancedBinarySearchTreeNode<E> bstn) {
         int heightDiff = 0;
         if (bstn != null) {
-            heightDiff = _getHeight(bstn.getLeftChild()) -
-                    _getHeight(bstn.getRightChild());
+            // left child height - right child height
+            heightDiff = _getHeight(bstn.getLeftChild()) - _getHeight(bstn.getRightChild());
         }
         return heightDiff;
     }
+    // delete BinarySearchTreeNode
     public BalancedBinarySearchTreeNode<E> _deleteBSTN(BalancedBinarySearchTreeNode<E> toBeDeleted) {
         BalancedBinarySearchTreeNode<E> newSubRoot = null, temp, w, wLc;
-        if (toBeDeleted == null)
+        if (toBeDeleted == null)    // 삭제할 노드가 없는 경우
             return null;
-        if (toBeDeleted.getLeftChild() == null && toBeDeleted.getRightChild() == null) {
+        if (toBeDeleted.getLeftChild() == null && toBeDeleted.getRightChild() == null) // 자식노드가 없는 경우
+        {
             newSubRoot = null;
-        } else if (toBeDeleted.getLeftChild() != null && toBeDeleted.getRightChild() == null) {
+        }
+        else if (toBeDeleted.getLeftChild() != null && toBeDeleted.getRightChild() == null)// 오른쪽 자식만 없는 경우
+        {
             newSubRoot = toBeDeleted.getLeftChild();
             newSubRoot.setParent(toBeDeleted.getParent());
-        } else if (toBeDeleted.getLeftChild() == null && toBeDeleted.getRightChild() != null) {
+        }
+        else if (toBeDeleted.getLeftChild() == null && toBeDeleted.getRightChild() != null)// 왼쪽 자식만 없는 경우
+        {
             newSubRoot = toBeDeleted.getRightChild();
             newSubRoot.setParent(toBeDeleted.getParent());
-        } else {
-            int heightDiff = _getHeightDiff(toBeDeleted);
+        }
+        else    // 양쪽 자식이 존재하는 경우
+        {
+            int heightDiff = _getHeightDiff(toBeDeleted); // height diff check
             BalancedBinarySearchTreeNode<E> lChild = toBeDeleted.getLeftChild();
             BalancedBinarySearchTreeNode<E> rChild = toBeDeleted.getRightChild();
             BalancedBinarySearchTreeNode<E> parToBeDeleted = toBeDeleted.getParent();
@@ -244,14 +259,18 @@ public class BalancedBinarySearchTree<E> {
         this._numEntry--;
         return newSubRoot;
     }
+
+    // rotateLL
     public BalancedBinarySearchTreeNode<E> _rotateLL(BalancedBinarySearchTreeNode<E> curSubRoot) {
         BalancedBinarySearchTreeNode<E> newSubRoot, BRC, curParent;
         curParent = curSubRoot.getParent();
         newSubRoot = curSubRoot.getLeftChild();
+        // right child - > left child
         BRC = newSubRoot.getRightChild();
         curSubRoot.setLeftChild(BRC);
         if (BRC != null)
             BRC.setParent(curSubRoot);
+        // child and parent change
         newSubRoot.setRightChild(curSubRoot);
         newSubRoot.setParent(curParent);
         curSubRoot.setParent(newSubRoot);
@@ -261,10 +280,12 @@ public class BalancedBinarySearchTree<E> {
         BalancedBinarySearchTreeNode<E> newSubRoot, BLC, curParent;
         curParent = curSubRoot.getParent();
         newSubRoot = curSubRoot.getRightChild();
+        // left child -> rightr child
         BLC = newSubRoot.getLeftChild();
         curSubRoot.setRightChild(BLC);
         if (BLC != null)
             BLC.setParent(curSubRoot);
+        // child and parent change
         newSubRoot.setLeftChild(curSubRoot);
         newSubRoot.setParent(curParent);
         curSubRoot.setParent(newSubRoot);
@@ -280,6 +301,7 @@ public class BalancedBinarySearchTree<E> {
         BR = B.getRightChild();
         subRoot = _rotateRR(A);
         newSubRoot = _rotateLL(C);
+        // set parent
         newSubRoot.setParent(curParent);
         A.setParent(newSubRoot);
         C.setParent(newSubRoot);
@@ -311,12 +333,12 @@ public class BalancedBinarySearchTree<E> {
     public BalancedBinarySearchTreeNode<E> _reBalance(BalancedBinarySearchTreeNode<E> curSubRoot) {
         BalancedBinarySearchTreeNode<E> newSubRoot = null;
         int heightDiff = 0;
-        heightDiff = _getHeightDiff(curSubRoot);
+        heightDiff = _getHeightDiff(curSubRoot);    // height diff check
         if (heightDiff > 1) { // left subtree is higher
             if (_getHeightDiff(curSubRoot.getLeftChild()) > 0) {
-                newSubRoot = _rotateLL(curSubRoot);
+                newSubRoot = _rotateLL(curSubRoot); // left child height is higher
             } else {
-                newSubRoot = _rotateLR(curSubRoot);
+                newSubRoot = _rotateLR(curSubRoot); // right child height is higher
             }
         } else if (heightDiff < -1) {
             if (_getHeightDiff(curSubRoot.getRightChild()) < 0) {
@@ -327,14 +349,16 @@ public class BalancedBinarySearchTree<E> {
         }
         return newSubRoot;
     }
-    public BalancedBinarySearchTreeNode<E> _insert_withRebalancing(BalancedBinarySearchTreeNode<E> curSubRoot,
-                                                                   BalancedBinarySearchTreeNode<E> curParent, E newEntry) {
+    // inser with rebalancing inner func
+    public BalancedBinarySearchTreeNode<E> _insert_withRebalancing(BalancedBinarySearchTreeNode<E> curSubRoot, BalancedBinarySearchTreeNode<E> curParent, E newEntry) {
         BalancedBinarySearchTreeNode<E> newBSTN, bstn, LC, RC;
-        if (curSubRoot == null) {
+        if (curSubRoot == null) // root가 null인 경우
+        {
             newBSTN = new BalancedBinarySearchTreeNode<E>(newEntry);
             curSubRoot = newBSTN;
-            if (curParent != null)
+            if (curParent != null)  // set parent
                 newBSTN.setParent(curParent);
+            // ser child
             newBSTN.setLeftChild(null);
             newBSTN.setRightChild(null);
             this._numEntry++;
@@ -345,15 +369,15 @@ public class BalancedBinarySearchTree<E> {
             LC = curSubRoot.getLeftChild();
             bstn = _insert_withRebalancing(LC, curSubRoot, newEntry);
             if (bstn != null) {
-                curSubRoot.setLeftChild(bstn);
-                curSubRoot = _reBalance(curSubRoot);
+                curSubRoot.setLeftChild(bstn); // set child
+                curSubRoot = _reBalance(curSubRoot); // rebalance
             }
         } else {
             RC = curSubRoot.getRightChild();
             bstn = _insert_withRebalancing(RC, curSubRoot, newEntry);
             if (bstn != null) {
-                curSubRoot.setRightChild(bstn);
-                curSubRoot = _reBalance(curSubRoot);
+                curSubRoot.setRightChild(bstn); // set child
+                curSubRoot = _reBalance(curSubRoot); // rebalance
             }
         }
         return curSubRoot;
@@ -364,6 +388,8 @@ public class BalancedBinarySearchTree<E> {
         if (newSubRoot != null)
             this._root = newSubRoot;
     }
+
+    // print out to file
     public void _fprintBST_withDepth(BalancedBinarySearchTreeNode<E>curBSTN, int level, Writer fout) throws IOException {
         if (curBSTN == null)
             return;
@@ -371,7 +397,7 @@ public class BalancedBinarySearchTree<E> {
             _fprintBST_withDepth(curBSTN.getRightChild(), level + 1, fout);
         }
         String str = "";
-        for (int i=0; i<level; i++) {
+        for (int i=0; i<level; i++) {   // print out to file based on level
             str += " ";
         }
         str += curBSTN.getEntry();
@@ -382,13 +408,14 @@ public class BalancedBinarySearchTree<E> {
         }
     }
 
+    // print out to file
     public void fprintBST_withDepth(Writer fout) throws IOException {
         if (this._numEntry == 0) {
             String str = "BinarySearchTree(%s) is Empty !!\n".formatted(this._name);
             fout.write(str);
             return;
         }
-        String str = "BinarySearchTree (BST_%sEntry, num _entry=%d)".formatted(this._name, this._numEntry);
+        String str = "BinarySearchTree (BST_%sEntry, num _entry=%d)\n".formatted(this._name, this._numEntry);
         fout.write(str);
         _fprintBST_withDepth(this._root, 0, fout);
     }
