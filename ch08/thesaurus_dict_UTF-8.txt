@@ -1,0 +1,9 @@
+mean NOUN average norm median middle average
+mean ADJ nasty poor miserly
+mean VERB denote intend
+offer NOUN proposal suggestion bargain
+offer VERB propose suggest present
+compromise NOUN bargaining bargaining
+compromise VERB settle concilliate
+delegate NOUN representative agent substitute
+delegate VERB authorize appoint designate 
