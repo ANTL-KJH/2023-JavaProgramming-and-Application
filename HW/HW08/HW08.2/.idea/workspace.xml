@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4f45f810-3412-4650-b58b-e348b4368a64" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../.idea/2023-JavaProgramming-and-Application.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/HW08.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW08.1/HW08.1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW08.2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW08.3/HW08.3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ch08/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_HashMultiMap/App_HashMultiMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/src/ch08_HashMultiMap/App_HashMultiMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/App_SkipList_str.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/App_SkipList_str.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/SkipList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/SkipList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_Trie/App_Trie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_Trie/Trie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_Trie/TrieNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ch08/thesaurus_dict_UTF-8.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2XYvCggDhEKiz4JLqp74uqPKHvD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ANTL/Desktop/GitHub/2023-JavaProgramming-and-Application/HW/HW08/HW08.3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="4f45f810-3412-4650-b58b-e348b4368a64" name="변경" comment="" />
+      <created>1698818703827</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698818703827</updated>
+      <workItem from="1698818704832" duration="864000" />
+      <workItem from="1699319485010" duration="3240000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
