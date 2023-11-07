@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 public class JPanel_BouncingBall extends JPanel
         implements ActionListener {
-
+    Color ball_color;
     Timer timer = new Timer(5, this); // this as ActionListener
     int pos_x = 0, pos_y = 0;
     int dx = 1, dy = 1;
@@ -28,7 +28,7 @@ public class JPanel_BouncingBall extends JPanel
     }
     public void paintComponent(Graphics g) {
         super.paintComponent(g);;
-        g.setColor(Color.RED);
+        g.setColor(this.ball_color);
         g.fillOval(pos_x, pos_y, ball_diameter, ball_diameter);
         timer.start();
     }
