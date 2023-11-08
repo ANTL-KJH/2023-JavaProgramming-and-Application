@@ -17,8 +17,7 @@ public class App_Trie {
         System.out.printf("Total keywords of %s : ", trie_str.getName());
         for (String word : keywords) {
             System.out.printf("%s ", word); }
-        System.out.printf("\n");
-        String test_keyword = "ab";
+        System.out.printf("\n");String test_keyword = "ab";
         keywords = trie_str.getPredictiveWords(test_keyword);
         System.out.printf("Predictive words of %s : ", test_keyword);
         for (String word : keywords) {

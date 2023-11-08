@@ -1,4 +1,5 @@
 package ch08_Trie;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -7,7 +8,7 @@ public class Trie {
     private TrieNode _root;
     private String _name;
     public Trie(String nm) {
-        this._root = new TrieNode('_', null);
+        this._root = new TrieNode('/');
         this._name = nm;
     }
     public String getName() {
@@ -22,7 +23,7 @@ public class Trie {
             if(children.containsKey(c)) {
                 curTN = children.get(c);
             } else {
-                curTN = new TrieNode(c, curTN);
+                curTN = new TrieNode(c);
                 children.put(c, curTN);
             }
             children = curTN.getChildren();
@@ -42,7 +43,8 @@ public class Trie {
     }
     public TrieNode _searchKeyword(String word) {
         TrieNode curTN = this._root;
-        TreeMap<Character, TrieNode> children = curTN.getChildren();
+        TreeMap<Character, TrieNode> children
+                = curTN.getChildren();
         for(int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
             if(children.containsKey(c)) {
