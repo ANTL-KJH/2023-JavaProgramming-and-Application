@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24f14001-7498-4d31-ad4f-1eac56df454d" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../.idea/2023-JavaProgramming-and-Application.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/HW08.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW08.1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW08.2/HW08.2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW08.3/HW08.3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_HashMultiMap/App_HashMultiMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/src/ch08_HashMultiMap/App_HashMultiMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/App_SkipList_str.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/App_SkipList_str.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/SkipList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/SkipList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_Trie/App_Trie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_Trie/Trie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_Trie/TrieNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/thesaurus_dict_UTF-8.txt" beforeDir="false" />
+    <list default="true" id="f91be84d-41d6-4cbc-b09f-687d2eeb7a22" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/../../HW08/HW08.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW08/HW08.1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW08/HW08.2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW08/HW08.2/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +24,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2XYjkT5DvPWagFDqDdnNTqzbZvY" />
+  <component name="ProjectId" id="2Xs5raOVt1P9HJZMynG7pnUTDXm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,24 +37,27 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/ANTL/Desktop/GitHub/2023-JavaProgramming-and-Application/HW/HW08/HW08.2",
+    "last_opened_file_path": "C:/Users/ANTL/Desktop/GitHub/2023-JavaProgramming-and-Application/HW/HW08-1/HW08.2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="24f14001-7498-4d31-ad4f-1eac56df454d" name="변경" comment="" />
-      <created>1698813050643</created>
+      <changelist id="f91be84d-41d6-4cbc-b09f-687d2eeb7a22" name="변경" comment="" />
+      <created>1699405147146</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1698813050643</updated>
-      <workItem from="1698813051641" duration="3768000" />
-      <workItem from="1699318240046" duration="1232000" />
+      <updated>1699405147146</updated>
+      <workItem from="1699405148119" duration="183000" />
+      <workItem from="1699412608236" duration="1886000" />
     </task>
     <servers />
   </component>

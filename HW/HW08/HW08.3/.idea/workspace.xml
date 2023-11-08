@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad0d5133-b1a8-4bcb-83ef-cd3f07da3e85" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../.idea/2023-JavaProgramming-and-Application.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/HW08.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW08.1/HW08.1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW08.2/HW08.2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW08.3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_HashMultiMap/App_HashMultiMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/src/ch08_HashMultiMap/App_HashMultiMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/App_SkipList_str.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/App_SkipList_str.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/SkipList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ch08/src/ch08_SkipList/SkipList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_Trie/App_Trie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_Trie/Trie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/src/ch08_Trie/TrieNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ch08/thesaurus_dict_UTF-8.txt" beforeDir="false" />
+    <list default="true" id="c1e88508-bb9c-4b81-9483-e3432002d888" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/../../HW08/HW08.1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW08/HW08.1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW08/HW08.2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW08/HW08.2/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +24,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="2XYwyOARZjIQNMaNZahv9e6ntXB" />
+  <component name="ProjectId" id="2Xs6US6floVU50ysG5JEWRhsJg6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,7 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/ANTL/Desktop/GitHub/2023-JavaProgramming-and-Application/ch09",
+    "last_opened_file_path": "C:/Users/ANTL/Desktop/GitHub/2023-JavaProgramming-and-Application/HW/HW08-1/HW08.3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,31 +45,16 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="App_WeightedGraph_KR" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="App_WeightedGraph_KR" />
-      <module name="HW08.3" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="애플리케이션.App_WeightedGraph_KR" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="ad0d5133-b1a8-4bcb-83ef-cd3f07da3e85" name="변경" comment="" />
-      <created>1698819575605</created>
+      <changelist id="c1e88508-bb9c-4b81-9483-e3432002d888" name="변경" comment="" />
+      <created>1699405458761</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1698819575605</updated>
-      <workItem from="1698819576613" duration="2596000" />
-      <workItem from="1699329863859" duration="2556000" />
-      <workItem from="1699348752563" duration="158000" />
+      <updated>1699405458761</updated>
+      <workItem from="1699405459768" duration="4851000" />
+      <workItem from="1699414586482" duration="90000" />
     </task>
     <servers />
   </component>
