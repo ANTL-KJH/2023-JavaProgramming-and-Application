@@ -28,47 +28,48 @@ public class Full_Duplex_Bidirectional_Text_Chatting_Server extends JFrame {
     static private DataOutputStream sockDataOutputstream = null;
     private static int port_no = 5056;
     public Full_Duplex_Bidirectional_Text_Chatting_Server() { // constructor
+        // data member
         setTitle("JavaSwing-based TextChatting_Server");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GridLayout gridLayout = new GridLayout(7, 2, 5, 5);
-//gridLayout.setVgap(5); // vertical gap
+        //gridLayout.setVgap(5); // vertical gap
         Container c = getContentPane();
         c.setBackground(Color.LIGHT_GRAY);
-        c.setLayout(new FlowLayout());
+        c.setLayout(new FlowLayout());  // flow layout
         JPanel pnl_addr = new JPanel();
-        Border border_addr = BorderFactory.createTitledBorder("Server/Client Address");
+        Border border_addr = BorderFactory.createTitledBorder("Server/Client Address"); // title border
         pnl_addr.setBorder(border_addr);
         c.add(pnl_addr);
-        JLabel l_serv_addr = new JLabel("Server Addr");
+        JLabel l_serv_addr = new JLabel("Server Addr"); // label
         pnl_addr.add(l_serv_addr);
-        JTextField tf_serv_addr = new JTextField("127.0.0.1");
-        tf_serv_addr.setBackground(Color.YELLOW);
+        JTextField tf_serv_addr = new JTextField("127.0.0.1");  // text
+        tf_serv_addr.setBackground(Color.YELLOW);   // background color
         pnl_addr.add(tf_serv_addr);
-        JLabel l_cli_addr = new JLabel("Client Addr");
+        JLabel l_cli_addr = new JLabel("Client Addr");  // label
         pnl_addr.add(l_cli_addr);
-        JTextField tf_cli_addr = new JTextField("127.0.0.1");
+        JTextField tf_cli_addr = new JTextField("127.0.0.1");   // text
         tf_cli_addr.setBackground(Color.YELLOW);
         pnl_addr.add(tf_cli_addr);
         JPanel pnl_display_area = new JPanel();
-        Border border_text_area = BorderFactory.createTitledBorder("Program Progress / Received Message");
+        Border border_text_area = BorderFactory.createTitledBorder("Program Progress / Received Message");  // title border
         pnl_display_area.setBorder(border_text_area);
         c.add(pnl_display_area);
-        JTextArea display_area = new JTextArea("Constructor executed...\n", 15, 30);
+        JTextArea display_area = new JTextArea("Constructor executed...\n", 15, 30);    // row(15) x col(30)
         pnl_display_area.add(new JScrollPane(display_area));
 //display_area.append("\nadded line"); // for testing only
         jtxt_display_area = display_area;
         JPanel pnl_message_input_area = new JPanel();
-        Border border_message_input_area = BorderFactory.createTitledBorder("Input message to be sent");
+        Border border_message_input_area = BorderFactory.createTitledBorder("Input message to be sent");    // title border
         pnl_message_input_area.setBorder(border_message_input_area);
         c.add(pnl_message_input_area);
         JTextArea msg_input_area = new JTextArea("Sample message to be sent to client", 3, 30);
         pnl_message_input_area.add(new JScrollPane(msg_input_area));
         jtxt_msg_input_area = msg_input_area;
-        JButton send_button = new JButton("Send Text Message to Client");
+        JButton send_button = new JButton("Send Text Message to Client");   // send button
 //send_button.setLocation(100, 100);
-        send_button.setSize(150, 50);
-        send_button.setBackground(Color.GREEN);
-        send_button.addActionListener(new ActionHandler());
+        send_button.setSize(150, 50);   // set button size
+        send_button.setBackground(Color.GREEN);     // button background color
+        send_button.addActionListener(new ActionHandler()); // adction listener
         c.add(send_button);
         setSize(400, 600);
         setVisible(true);
@@ -82,14 +83,16 @@ public class Full_Duplex_Bidirectional_Text_Chatting_Server extends JFrame {
     private class ActionHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             JButton b = (JButton)e.getSource();
-            if (b.getText().equals("Send Text Message to Client")) {
-                String input_msg = jtxt_msg_input_area.getText();
+            if (b.getText().equals("Send Text Message to Client"))  // equal check
+            {
+                String input_msg = jtxt_msg_input_area.getText(); // get text
                 jtxt_display_area.append("<< " + input_msg + "\n");
                 jtxt_msg_input_area.setText(""); // clear input text message area
                 try {
                     sockDataOutputstream.writeUTF(input_msg);
-                } catch (IOException e1) {
-// TODO Auto-generated catch block
+                } catch (IOException e1)
+                {
+                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
             }
@@ -97,33 +100,33 @@ public class Full_Duplex_Bidirectional_Text_Chatting_Server extends JFrame {
     }
     public static void main(String[] agrs) throws IOException {
         Full_Duplex_Bidirectional_Text_Chatting_Server gui_TxtChat_Server = new Full_Duplex_Bidirectional_Text_Chatting_Server();
-//gui_TxtChatting.
-        ServerSocket servSocket = new ServerSocket(port_no);
+        //gui_TxtChatting.
+        ServerSocket servSocket = new ServerSocket(port_no); // open socket
         SocketAddress serv_addr = servSocket.getLocalSocketAddress();
         System.out.printf("Socket Server:: ServerSocket (serv_addr: %s) is opened.\n", serv_addr);
         jtxt_display_area.append("Socket Server (" + serv_addr + "):: ServerSocket is opened.\n");
-// getting client request
+        // getting client request
         Socket cliSocket = null;
         System.out.printf("Socket Server:: waiting for a client's connection request ....\n");
         jtxt_display_area.append("Socket Server:: waiting for a client's connection request ....\n");
         try
         {
-// mynewSocket object to receive incoming client requests
-            cliSocket = servSocket.accept();
+            // mynewSocket object to receive incoming client requests
+            cliSocket = servSocket.accept();    // client accept
             System.out.printf("Socket Server:: Connected to a client: %s\n", cliSocket);
             jtxt_display_area.append("Socket Server:: Connected to a client" + cliSocket + "\n");
-// obtaining input and out streams
+            // obtaining input and out streams
             DataInputStream sockDataInputstream = new DataInputStream(cliSocket.getInputStream());
-            setDataInputStream(sockDataInputstream);
+            setDataInputStream(sockDataInputstream);    // input stream
             DataOutputStream sockDataOutputstream = new DataOutputStream(cliSocket.getOutputStream());
-            setDataOutputStream(sockDataOutputstream);
+            setDataOutputStream(sockDataOutputstream);  // output stream
             String recvMsgStr;
             String msgStrToSent;
             while(true)
             {
                 try {
-// getting answers from client
-                    recvMsgStr = sockDataInputstream.readUTF();
+                    // getting answers from client
+                    recvMsgStr = sockDataInputstream.readUTF(); // receieve
                     if(recvMsgStr.equals("Exit"))
                     {
                         System.out.println("Client " + cliSocket + " sends exit...");
@@ -142,7 +145,7 @@ public class Full_Duplex_Bidirectional_Text_Chatting_Server extends JFrame {
                 }
             } // end while(true
             try{
-// closing resources
+                // closing resources
                 sockDataInputstream.close();
                 sockDataOutputstream.close();
             }catch(IOException e){
