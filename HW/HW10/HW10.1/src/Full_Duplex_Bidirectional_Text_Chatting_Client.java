@@ -31,12 +31,12 @@ public class Full_Duplex_Bidirectional_Text_Chatting_Client extends JFrame {
     static private JTextField jtxt_cli_addr = null;
     static private DataInputStream sockDataInputstream = null;
     static private DataOutputStream sockDataOutputstream = null;
-    private static int port_no = 5555;
-    public Full_Duplex_Bidirectional_Text_Chatting_Client() {
-        setTitle("JavaSwing-based TextChatting_Client");    // set title
+    private static int port_no = 5056;
+    public Full_Duplex_Bidirectional_Text_Chatting_Client() { // constructor
+        setTitle("JavaSwing-based TextChatting_Client");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GridLayout gridLayout = new GridLayout(7, 2, 5, 5);
-        //gridLayout.setVgap(5); // vertical gap
+//gridLayout.setVgap(5); // vertical gap
         Container c = getContentPane();
         c.setBackground(Color.LIGHT_GRAY);
         c.setLayout(new FlowLayout());
@@ -44,12 +44,12 @@ public class Full_Duplex_Bidirectional_Text_Chatting_Client extends JFrame {
         Border border_addr = BorderFactory.createTitledBorder("Server/Client Address");
         pnl_addr.setBorder(border_addr);
         c.add(pnl_addr);
-        JLabel l_serv_addr = new JLabel("Server Addr"); // Server Addr Label
+        JLabel l_serv_addr = new JLabel("Server Addr");
         pnl_addr.add(l_serv_addr);
         JTextField tf_serv_addr = new JTextField("127.0.0.1");
         tf_serv_addr.setBackground(Color.YELLOW);
         pnl_addr.add(tf_serv_addr);
-        JLabel l_cli_addr = new JLabel("Client Addr");  // Client Addr Label
+        JLabel l_cli_addr = new JLabel("Client Addr");
         pnl_addr.add(l_cli_addr);
         JTextField tf_cli_addr = new JTextField("127.0.0.1");
         tf_cli_addr.setBackground(Color.YELLOW);

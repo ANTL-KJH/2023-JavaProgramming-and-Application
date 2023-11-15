@@ -26,7 +26,7 @@ public class Full_Duplex_Bidirectional_Text_Chatting_Server extends JFrame {
     static private JTextField jtxt_cli_addr = null;
     static private DataInputStream sockDataInputstream = null;
     static private DataOutputStream sockDataOutputstream = null;
-    private static int port_no = 5555;
+    private static int port_no = 5056;
     public Full_Duplex_Bidirectional_Text_Chatting_Server() { // constructor
         setTitle("JavaSwing-based TextChatting_Server");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
